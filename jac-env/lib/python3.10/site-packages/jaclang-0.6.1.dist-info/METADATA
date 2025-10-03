@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: jaclang
+Version: 0.6.1
+Home-page: https://github.com/Jaseci-Labs/jaclang
+Author: Jason Mars
+Author-email: jason@jaseci.org
+Provides-Extra: llms
+Requires-Dist: transformers ; extra == 'llms'
+Requires-Dist: accelerator ; extra == 'llms'
+Requires-Dist: torch ; extra == 'llms'
+Requires-Dist: ollama ; extra == 'llms'
+Requires-Dist: anthropic ; extra == 'llms'
+Requires-Dist: groq ; extra == 'llms'
+Requires-Dist: openai ; extra == 'llms'
+Requires-Dist: together ; extra == 'llms'
+Requires-Dist: loguru ; extra == 'llms'
+
