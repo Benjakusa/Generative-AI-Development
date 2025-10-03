@@ -292,14 +292,14 @@ impl TokenGenerator.process_payment {
         here.generated_token = generated_token
         here.status = "completed"
         
-        print(f"✅ Payment processed successfully!")
-        print(f"📧 Account: {here.account_number}")
-        print(f"💰 Amount: ${here.amount}")
-        print(f"🔑 Generated Token: {generated_token}")
-        print(f"💳 New Balance: ${new_balance}")
+        print(f" Payment processed successfully!")
+        print(f" Account: {here.account_number}")
+        print(f" Amount: ${here.amount}")
+        print(f" Generated Token: {generated_token}")
+        print(f" New Balance: ${new_balance}")
     else:
         here.status = "failed"
-        print(f"❌ Payment failed for account {here.account_number}")
+        print(f" Payment failed for account {here.account_number}")
     
     disengage;
 }
@@ -310,9 +310,9 @@ impl TokenGenerator.validate_token {
     here.message = validation_result["message"]
     
     if here.is_valid:
-        print(f"✅ {here.message}")
+        print(f"{here.message}")
     else:
-        print(f"❌ {here.message}")
+        print(f"{here.message}")
     
     disengage;
 }
@@ -323,9 +323,9 @@ impl TokenGenerator.use_token {
     here.message = usage_result["message"]
     
     if here.success:
-        print(f"✅ {here.message}")
+        print(f"{here.message}")
     else:
-        print(f"❌ {here.message}")
+        print(f" {here.message}")
     
     disengage;
 }
@@ -334,7 +334,7 @@ impl TokenGenerator.get_account_info {
     account_info = get_account_info_from_db(here.account_number)
     
     if not account_info["found"]:
-        print("❌ Account not found")
+        print(" Account not found")
         disengage;
     
     here.balance = account_info["balance"]
@@ -348,7 +348,7 @@ impl TokenGenerator.get_account_info {
     for token in here.tokens:
         token_str, amount, is_used, created, expires = token
         status = "USED" if is_used else "ACTIVE"
-        print(f"  🔑 Token: {token_str} | Amount: ${amount} | Status: {status} | Created: {created}")
+        print(f"  Token: {token_str} | Amount: ${amount} | Status: {status} | Created: {created}")
     
     disengage;
 }
